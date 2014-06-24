@@ -46,7 +46,7 @@ INSTALLED_APPS = (
     "mezzanine.accounts",
     "mezzanine.mobile",
 
-    "debug_toolbar",
+    # "debug_toolbar",
 )
 
 USE_I18N = True
