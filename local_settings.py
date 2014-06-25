@@ -46,7 +46,6 @@ INSTALLED_APPS = (
     "mezzanine.accounts",
     "mezzanine.mobile",
 
-    # "debug_toolbar",
 )
 
 USE_I18N = True
@@ -61,5 +60,9 @@ LANGUAGE_CODE = 'zh-cn'
 TIME_ZONE = 'Asia/Shanghai'
 
 DEFAULT_CHARSET='utf-8'
+
+# add begin by weiguobin at 2014-06-26 for add settings.PAGES_SLUG_INDIVIDUAL_CENTER
+PAGES_SLUG_INDIVIDUAL_CENTER = "/individual center"
+# add end by weiguobin at 2014-06-26 for add settings.PAGES_SLUG_INDIVIDUAL_CENTER
 
 a=u'中国人'

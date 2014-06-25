@@ -522,6 +522,10 @@ register_setting(
         "COMMENTS_USE_RATINGS", "DEV_SERVER", "FORMS_USE_HTML5",
         "GRAPPELLI_INSTALLED", "GOOGLE_ANALYTICS_ID", "JQUERY_FILENAME",
         "LOGIN_URL", "LOGOUT_URL", "SITE_TITLE", "SITE_TAGLINE", "USE_L10N",
+
+        # add begin by weiguobin at 2014-06-26 for add settings.PAGES_SLUG_INDIVIDUAL_CENTER
+        "PAGES_SLUG_INDIVIDUAL_CENTER",
+        # add end by weiguobin at 2014-06-26 for add settings.PAGES_SLUG_INDIVIDUAL_CENTER
     ),
 )
 

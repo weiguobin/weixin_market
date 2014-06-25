@@ -13,12 +13,15 @@
         <a href="{% url "profile_update" %}">{{ request.user|username_or:"email" }}</a>
     </p>
     {% endif %}
-    <a href="{% url "logout" %}?next={{ request.path }}" class="btn btn-sm btn-danger btn-account">
+    <a href="{% url "logout" %}?next={{ settings.PAGES_SLUG_INDIVIDUAL_CENTER }}" class="btn btn-sm btn-danger btn-account">
+{#    <a href="{% url "logout" %}?next={{ request.path }}" class="btn btn-sm btn-danger btn-account">#}
         <span class="glyphicon glyphicon-log-out"></span> {% trans "Log out" %}</a>
 {% else %}
-    <a href="{% url "login" %}?next={{ request.path }}" class="btn btn-default btn-sm btn-account">
+    <a href="{% url "login" %}?next={{ settings.PAGES_SLUG_INDIVIDUAL_CENTER }}" class="btn btn-default btn-sm btn-account">
+{#    <a href="{% url "login" %}?next={{ request.path }}" class="btn btn-default btn-sm btn-account">#}
         <span class="glyphicon glyphicon-log-in"></span> {% trans "Log in" %}</a>
     &nbsp;{% trans "or" %}&nbsp;
-    <a href="{% url "signup" %}?next={{ request.path }}" class="btn btn-default btn-sm btn-account">
+    <a href="{% url "signup" %}?next={{ settings.PAGES_SLUG_INDIVIDUAL_CENTER }}" class="btn btn-default btn-sm btn-account">
+{#    <a href="{% url "signup" %}?next={{ request.path }}" class="btn btn-default btn-sm btn-account">#}
         <span class="glyphicon glyphicon-edit"></span> {% trans "Sign up" %}</a>
 {% endif %}
