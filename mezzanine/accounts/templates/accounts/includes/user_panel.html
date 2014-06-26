@@ -1,21 +1,22 @@
 {% load i18n future mezzanine_tags accounts_tags %}
 
 {% if request.user.is_authenticated %}
-    <p>
+{#    <p>#}
     {% trans "Logged in as: " %}
     {% url "profile" request.user.username as profile_url %}
     {% if profile_url %}
         <a href="{{ profile_url }}">{{ request.user|username_or:"email" }}</a>
-    </p>
+{#    </p>#}
         <a href="{% url "profile_update" %}" class="btn btn-default btn-sm btn-account">
             <span class="glyphicon glyphicon-edit"></span> {% trans "Update profile" %}</a>
     {% else %}
         <a href="{% url "profile_update" %}">{{ request.user|username_or:"email" }}</a>
-    </p>
+{#    </p>#}
     {% endif %}
+    &nbsp;&nbsp;
     <a href="{% url "logout" %}?next={{ settings.PAGES_SLUG_INDIVIDUAL_CENTER }}" class="btn btn-sm btn-danger btn-account">
 {#    <a href="{% url "logout" %}?next={{ request.path }}" class="btn btn-sm btn-danger btn-account">#}
-        <span class="glyphicon glyphicon-log-out"></span> {% trans "Log out" %}</a>
+        <span class="glyphicon glyphicon-log-out"></span> {% trans "My Log out" %}</a>
 {% else %}
     <a href="{% url "login" %}?next={{ settings.PAGES_SLUG_INDIVIDUAL_CENTER }}" class="btn btn-default btn-sm btn-account">
 {#    <a href="{% url "login" %}?next={{ request.path }}" class="btn btn-default btn-sm btn-account">#}

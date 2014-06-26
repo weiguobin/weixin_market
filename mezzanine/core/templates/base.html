@@ -64,9 +64,18 @@
 <div class="navbar-collapse collapse">
 {#    {% search_form "all" %}#}
     {% page_menu "pages/menus/dropdown.html" %}
+
+    <div class="panel-body bottom-right text-right">
+    {% include "accounts/includes/user_panel.html" %}
+    </div>
+
+</div>
+
 </div>
 </div>
-</div>
+
+
+
 
 <div class="container">
 
@@ -96,30 +105,22 @@
 <div class="container">
 <div class="row">
 
-<div class="col-md-2 left">
-    {% block left_panel %}
-    <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
-    {% endblock %}
-</div>
+{#<div class="col-md-2 left">#}
+{#    {% block left_panel %}#}
+{#    <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>#}
+{#    {% endblock %}#}
+{#</div>#}
 
-<div class="col-md-7 middle">
+
+{# 内容居中: text-center ； 向右偏移6列：col-md-offset-6 ;#}
+{# 创建一个12列的栅格系统: col-md-12 ； 按钮相关：btn ;#}
+
+{#<div class="col-md-12 text-center">#}
+<div class="col-md-12">
     {% block main %}{% endblock %}
 </div>
 
-<div class="col-md-3 right">
-    {% nevercache %}
-    {% include "includes/user_panel.html" %}
-    {% endnevercache %}
-    <div class="panel panel-default">
-    <div class="panel-body">
-    {% block right_panel %}
-    {% ifinstalled mezzanine.twitter %}
-    {% include "twitter/tweets.html" %}
-    {% endifinstalled %}
-    {% endblock %}
-    </div>
-    </div>
-</div>
+
 
 </div>
 </div>

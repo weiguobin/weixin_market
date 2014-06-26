@@ -79,7 +79,12 @@ class ProfileForm(Html5Mixin, forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ("first_name", "last_name", "email", "username")
+
+        # modify begin by weiguobin at 2014-6-26
+        # fields = ("first_name", "last_name", "email", "username")
+        fields = ("email", "username")
+        # modify end by weiguobin at 2014-6-26
+
         exclude = _exclude_fields
 
     def __init__(self, *args, **kwargs):
