@@ -65,4 +65,15 @@ DEFAULT_CHARSET='utf-8'
 PAGES_SLUG_INDIVIDUAL_CENTER = "/individual center"
 # add end by weiguobin at 2014-06-26 for add settings.PAGES_SLUG_INDIVIDUAL_CENTER
 
+# 用户注册需要邮件确认
+ACCOUNTS_VERIFICATION_REQUIRED = True
+
+#服务器发邮件的邮箱配置
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER='weiwgb@gmail.com'
+EMAIL_HOST_PASSWORD='wgb881537'
+EMAIL_USE_TLS = True
+
+
+
 a=u'中国人'

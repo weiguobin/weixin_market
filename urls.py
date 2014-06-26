@@ -6,6 +6,8 @@ from django.contrib import admin
 
 from mezzanine.core.views import direct_to_template
 
+# from django.core.mail import send_mail
+# send_mail('subject','body','weiwgb@gmail.com', ['407385471@qq.com'],fail_silently=True)
 
 admin.autodiscover()
 
