@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+
 from __future__ import absolute_import, unicode_literals
 
 ######################
@@ -94,7 +96,7 @@ MANAGERS = ADMINS
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -103,14 +105,17 @@ ALLOWED_HOSTS = []
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = None
+TIME_ZONE = 'Asia/Shanghai'
+
+DEFAULT_CHARSET='utf-8'
 
 # If you set this to True, Django will use timezone-aware datetimes.
 USE_TZ = True
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = "en"
+LANGUAGE_CODE = 'zh-cn'
+# LANGUAGE_CODE = 'en'
 
 # Supported languages
 _ = lambda s: s
@@ -130,7 +135,7 @@ SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = False
+USE_I18N = True
 
 # Tuple of IP addresses, as strings, that:
 #   * See debug comments, when DEBUG is true
@@ -164,10 +169,10 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 
 DATABASES = {
     "default": {
-        # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
+        # Ends with "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
+        "ENGINE": "django.db.backends.sqlite3",
         # DB name or path to database file if using sqlite3.
-        "NAME": "",
+        "NAME": "dev.db",
         # Not used with sqlite3.
         "USER": "",
         # Not used with sqlite3.
@@ -243,13 +248,14 @@ INSTALLED_APPS = (
     "mezzanine.conf",
     "mezzanine.core",
     "mezzanine.generic",
-    "mezzanine.blog",
+    # "mezzanine.blog",
     "mezzanine.forms",
     "mezzanine.pages",
-    "mezzanine.galleries",
-    "mezzanine.twitter",
-    #"mezzanine.accounts",
-    #"mezzanine.mobile",
+    # "mezzanine.galleries",
+    # "mezzanine.twitter",
+    "mezzanine.accounts",
+    "mezzanine.mobile",
+
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -302,7 +308,7 @@ PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
 
 # These will be added to ``INSTALLED_APPS``, only if available.
 OPTIONAL_APPS = (
-    "debug_toolbar",
+    # "debug_toolbar", # 发布模式下需要注释该app
     "django_extensions",
     "compressor",
     PACKAGE_NAME_FILEBROWSER,
@@ -345,7 +351,6 @@ try:
 except ImportError:
     pass
 
-
 ####################
 # DYNAMIC SETTINGS #
 ####################
@@ -362,3 +367,22 @@ except ImportError:
     pass
 else:
     set_dynamic_settings(globals())
+
+
+# Make these unique, and don't share it with anybody.
+SECRET_KEY = "18efe6c9-2430-48ab-a656-fc5983cdcce2354b4575-1b4b-46d0-97ae-70ac419be439ebcc7771-9c01-4a95-b3c0-f9a757a66ce7"
+NEVERCACHE_KEY = "bfe26cda-75bf-4c5b-b7cd-85be601222f75aa9c632-4618-42fb-b1c9-d48a8bdaa65bc556a0cc-b865-4e7c-b9d1-99374d5352c3"
+
+
+# add begin by weiguobin at 2014-06-26 for add settings.PAGES_SLUG_INDIVIDUAL_CENTER
+PAGES_SLUG_INDIVIDUAL_CENTER = "/individual center"
+# add end by weiguobin at 2014-06-26 for add settings.PAGES_SLUG_INDIVIDUAL_CENTER
+
+# 用户注册需要邮件确认
+ACCOUNTS_VERIFICATION_REQUIRED = True
+
+#服务器发邮件的邮箱配置
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER='weiwgb@gmail.com'
+EMAIL_HOST_PASSWORD='wgb881537'
+EMAIL_USE_TLS = True

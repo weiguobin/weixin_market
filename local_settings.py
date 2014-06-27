@@ -74,6 +74,3 @@ EMAIL_HOST_USER='weiwgb@gmail.com'
 EMAIL_HOST_PASSWORD='wgb881537'
 EMAIL_USE_TLS = True
 
-
-
-a=u'中国人'
